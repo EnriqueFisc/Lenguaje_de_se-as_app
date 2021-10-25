@@ -1,5 +1,5 @@
 
-# Aplicación web para el aprendizaje del lenguiaje de señas mexicano (LSM).
+# Aplicación web para el aprendizaje del lenguaje de señas mexicano (LSM).
 
 ## Proyecto universitario para la materia de desarrollo de un proyecto de noveno semetre.
 

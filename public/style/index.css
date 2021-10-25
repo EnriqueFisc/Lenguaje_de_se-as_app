@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap%27');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    align-items: center;
+    background-color: #ECECEC;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    justify-content: center;
+}
+.main__container {
+    background-color: white;
+    border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 800px;
+    padding: 30px;
+    text-align: center;
+    width: 850px;
+}
+.main__subtitle-container{
+    padding: 40px;
+}
+.main__subtitle-container span{
+    font-size: 50px;
+}
+
+.main__title-container h1{
+    font-size: 60px;
+    font-weight: bold;
+}
+.main__img-logo-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.main__img-logo-container img {
+    height: 150px;
+}
+.main__button-container {
+    align-items: center;
+    display: flex;
+    height: 150px;
+    justify-content: center;
+}
+.main__url-button {
+    background-color: #4879FF;
+    border-radius: 40px;
+    color: white;
+    font-size: 50px;
+    font-weight: bolder;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    width: 402px;
+}
+.main__url-button:hover {
+    background-color: #ffff;
+    border: 1px solid #4879FF;
+    color: #4879FF;
+
+    transition: background-color .3s ease;
+}
+.main__url-button:active {
+    background-color: rgb(218, 218, 218);
+    border: 1px solid #4879FF;
+    color: #4879FF;
+
+    transition: background-color .3s ease;
+}

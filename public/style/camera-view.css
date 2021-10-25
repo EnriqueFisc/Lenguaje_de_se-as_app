@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    background-color: #ECECEC;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    justify-content: center;
+}
+
+video {
+    
+}
+.canvas {
+    width: 200px;
+    height: 200px;
+    display: none;
+}
+span {
+    font-size: 90px;
+}
+
+.camera-screen__video-container {
+    align-items: center;
+    display: flex;
+    height: 480px;
+    justify-content: center;
+    max-width: 100%;
+}
+.camera-screen__letter-card-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+.camera-screen__fab-letter-card {
+    background-color: #428BCA;
+    color: #ffff;
+    cursor: pointer;
+    padding: 20px;
+    border: 0;
+    border-radius: 50%;
+}
+.camera-screen__fab-letter-card:hover {
+    background-color: #3674aa;
+
+    transition: background-color 0.3s ease;
+}
+.camera-screen__fab-letter-card:hover:disabled {
+    cursor: unset;
+}
+.camera-screen__fab-letter-card:active {
+    background-color: #4691d3;
+}
+.camera-screen__fab-letter-card:disabled {
+    background-color: #7eb4e4;
+}
+.camera-screen__letter-card {
+    background-color: #ffff;
+    border-radius: 20px;
+    margin:  0 20px 0 20px;
+    height: 250px;
+    position: relative;
+    width: 150px;
+}
+.camera-screen__card-head {
+    align-items: center;
+    background-color: rgb(197, 197, 197);
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    height: 60%;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+}
+.camera-screen__img-container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    overflow: hidden;
+    width: 90%;
+}
+.camera-screen__img-container img{
+    max-height: 100%;
+    /* max-width: 100%; */
+}
+.camera-screen__card-body {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40%;
+}
+.camera-screen__sign-lang-successfully {
+    align-items: center;
+    background-color: #5CB85C;
+    border-radius: 50%;
+    bottom: -20px;
+    color: #ffff;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    padding: 10px;
+    position: absolute;
+    right: -20px;
+    width: 40px;
+}
+
+.hidden {
+    visibility: hidden;
+}

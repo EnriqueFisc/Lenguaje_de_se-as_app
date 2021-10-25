@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../style/camera-view.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <button id="btn">Abrir camara</button> -->
+    <div class="camera-screen__container">
+        <div class="camera-screen__video-container">
+            <video class="  " id="video" playsinline autoplay="true"></video>
+        </div>
+        <div class="camera-screen__letter-card-container">
+            <button 
+                id="atras" 
+                class="camera-screen__fab-letter-card"
+                disabled
+            >
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <div class="camera-screen__letter-card">
+                <div class="camera-screen__card-head">
+                    <div class="camera-screen__img-container">
+                        <img id="imagenMano" src="../src/A1.png" alt="letra">
+                    </div>
+                </div>
+                <div class="camera-screen__card-body">
+                    <span id="letra">Aa</span>
+                </div>
+                <div id="checador" class="camera-screen__sign-lang-successfully hidden">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            <button id="adelante" class="camera-screen__fab-letter-card">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+    <canvas id="canvas1" class="canvas"></canvas>
+
+    <script type="module" src="../js/camera.js"></script>
+</body>
+
+</html>

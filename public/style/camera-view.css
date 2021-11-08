@@ -5,16 +5,16 @@
 }
 
 body {
+    overflow: hidden;
+}
+.container__screen {
     align-items: center;
     background-color: #ECECEC;
     display: flex;
     font-family: 'Roboto', sans-serif;
     height: 100vh;
     justify-content: center;
-}
-
-video {
-    
+    overflow: hidden;
 }
 .canvas {
     width: 200px;
@@ -24,12 +24,16 @@ video {
 span {
     font-size: 90px;
 }
-
+video {
+    border-radius: 20px;
+}
 .camera-screen__video-container {
     align-items: center;
     display: flex;
-    height: 480px;
+    /* height: 480px; */
     justify-content: center;
+    overflow: hidden;
+    max-height: 100%;
     max-width: 100%;
 }
 .camera-screen__letter-card-container {
@@ -41,11 +45,12 @@ span {
 }
 .camera-screen__fab-letter-card {
     background-color: #428BCA;
+    border: 0;
+    border-radius: 20px;
     color: #ffff;
     cursor: pointer;
-    padding: 20px;
-    border: 0;
-    border-radius: 50%;
+    padding: 10px;
+    /* border-radius: 50%; */
 }
 .camera-screen__fab-letter-card:hover {
     background-color: #3674aa;
@@ -68,6 +73,11 @@ span {
     height: 250px;
     position: relative;
     width: 150px;
+}
+.success {
+    background-color: #5CB85C;
+    color: #ffff;
+    border: 2px solid #5CB85C;
 }
 .camera-screen__card-head {
     align-items: center;
@@ -100,10 +110,12 @@ span {
 }
 .camera-screen__sign-lang-successfully {
     align-items: center;
-    background-color: #5CB85C;
+    background-color: #ffff;
+    /* border-color: #5CB85C; */
+    border: 2px solid #5CB85C;
     border-radius: 50%;
-    bottom: -20px;
-    color: #ffff;
+    bottom: -20px ;
+    color: #5CB85C;
     display: flex;
     height: 40px;
     justify-content: center;

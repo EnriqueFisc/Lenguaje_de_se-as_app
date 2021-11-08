@@ -7,7 +7,10 @@ const indexHtmlPath = path.join( __dirname, '../public/index.html' );
 
 app.use( express.static( path.join( __dirname, '../public' ) ) );
 app.use( express.json() );
-// app.use( cors() );
+app.use( cors({
+    origin: 'https://s-install.avcdn.net',
+    origin: 'http://localhost:3000/'
+}));
 
 
 app.get( '*', ( req, res ) => {

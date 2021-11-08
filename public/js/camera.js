@@ -10,6 +10,7 @@ const imgManoEjemplo = document.querySelector('#imagenMano');
 const btnAtras = document.querySelector('#atras');
 const btnSiguiente = document.querySelector('#adelante');
 
+const tarjetaLetra = document.querySelector('#card');
 const checadorSeñas = document.querySelector('#checador');
 
 let contadorDeLetras = 0;
@@ -30,7 +31,7 @@ imgManoEjemplo.src = arregloAbecedario[ contadorDeLetras ].url;
     try {
 
         console.log("Cargando modelo...");
-        modelo = await tf.loadLayersModel("../modelo_red/model.json");
+        modelo = await tf.loadLayersModel("../LSM-modelo-v1/model.json");
         console.log("Modelo cargado");
         
     } catch ( err ) {
@@ -77,9 +78,9 @@ const convertirImagenEnArregloDeEscalaGrises = ( canvasFrame ) => {
             let verde = imgData.data[p+1] / 255;
             let azul = imgData.data[p+2] / 255;
 
-            let gray = ( rojo + verde + azul ) / 3;
+            //let gray = ( rojo + verde + azul ) / 3;
 
-            arrPixelesAux.push([ gray ]);
+            arrPixelesAux.push([ rojo, verde, azul ]);
             if (arrPixelesAux.length == 200) {
                 imagenEnArreglo.push(arrPixelesAux);
                 arrPixelesAux = [];
@@ -105,13 +106,13 @@ const predecir = () => {
 
     if ( contadorDeLetras === respuesta ) {
         
-        checadorSeñas.classList.remove('hidden');
+        agregarClaseExitoSeña();
 
     }
     
     setTimeout( () => {
         predecir();
-    } , 1000);
+    } , 500);
                 
 
 }
@@ -121,7 +122,7 @@ btnSiguiente.addEventListener( 'click' , () => {
     contadorDeLetras++;
     letra.innerHTML = arregloAbecedario[ contadorDeLetras ].letra;
     imgManoEjemplo.src = arregloAbecedario[ contadorDeLetras ].url;
-    checadorSeñas.classList.add('hidden');
+    borrarClasesExitoSeña();
 
     if ( !arregloAbecedario[ contadorDeLetras + 1 ] ) {
         btnSiguiente.disabled = true;
@@ -133,10 +134,22 @@ btnAtras.addEventListener( 'click' , () => {
     contadorDeLetras--;
     letra.innerHTML = arregloAbecedario[ contadorDeLetras ].letra;
     imgManoEjemplo.src = arregloAbecedario[ contadorDeLetras ].url;
-    checadorSeñas.classList.add('hidden');
+    borrarClasesExitoSeña();
 
     if ( !arregloAbecedario[ contadorDeLetras - 1 ] ) {
         btnAtras.disabled = true;
     }
     btnSiguiente.disabled = false;
 });
+
+
+const borrarClasesExitoSeña = () => {
+    checadorSeñas.classList.add('hidden');
+    tarjetaLetra.classList.remove( 'animate__heartBeat' );
+    tarjetaLetra.classList.remove( 'success' );
+}
+const agregarClaseExitoSeña = () => {
+    checadorSeñas.classList.remove('hidden');
+    tarjetaLetra.classList.add( 'animate__heartBeat' );
+    tarjetaLetra.classList.add( 'success' );
+}

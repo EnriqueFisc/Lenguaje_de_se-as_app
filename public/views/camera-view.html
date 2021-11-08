@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="../style/camera-view.css">
 
     <title>Document</title>
@@ -17,34 +18,34 @@
 
 <body>
     <!-- <button id="btn">Abrir camara</button> -->
-    <div class="camera-screen__container">
-        <div class="camera-screen__video-container">
-            <video class="  " id="video" playsinline autoplay="true"></video>
-        </div>
-        <div class="camera-screen__letter-card-container">
-            <button 
-                id="atras" 
-                class="camera-screen__fab-letter-card"
-                disabled
-            >
-                <i class="fas fa-arrow-left"></i>
-            </button>
-            <div class="camera-screen__letter-card">
-                <div class="camera-screen__card-head">
-                    <div class="camera-screen__img-container">
-                        <img id="imagenMano" src="../src/A1.png" alt="letra">
+    <div class="container__screen">
+        <div class="camera-screen__container">
+            <div class="camera-screen__video-container">
+                <video class="  " id="video" playsinline autoplay="true"></video>
+            </div>
+            <div class="camera-screen__letter-card-container">
+                <button id="atras" class="camera-screen__fab-letter-card" disabled>
+                    <!-- <i class="fas fa-arrow-left"></i> -->
+                    <p>Anterior</p>
+                </button>
+                <div id="card" class="camera-screen__letter-card animate__animated ">
+                    <div class="camera-screen__card-head">
+                        <div class="camera-screen__img-container">
+                            <img id="imagenMano" src="../src/A1.png" alt="letra">
+                        </div>
+                    </div>
+                    <div class="camera-screen__card-body">
+                        <span id="letra">Aa</span>
+                    </div>
+                    <div id="checador" class="camera-screen__sign-lang-successfully hidden">
+                        <i class="fas fa-check"></i>
                     </div>
                 </div>
-                <div class="camera-screen__card-body">
-                    <span id="letra">Aa</span>
-                </div>
-                <div id="checador" class="camera-screen__sign-lang-successfully hidden">
-                    <i class="fas fa-check"></i>
-                </div>
+                <button id="adelante" class="camera-screen__fab-letter-card">
+                    <!-- <i class="fas fa-arrow-right"></i> -->
+                    <p>Siguiente</p>
+                </button>
             </div>
-            <button id="adelante" class="camera-screen__fab-letter-card">
-                <i class="fas fa-arrow-right"></i>
-            </button>
         </div>
     </div>
     <canvas id="canvas1" class="canvas"></canvas>

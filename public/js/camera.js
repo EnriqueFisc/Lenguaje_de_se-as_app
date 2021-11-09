@@ -33,9 +33,10 @@ imgManoEjemplo.src = arregloAbecedario[ contadorDeLetras ].url;
         console.log("Cargando modelo...");
         modelo = await tf.loadLayersModel("../LSM-modelo-v1/model.json");
         console.log("Modelo cargado");
-        
+        alert('Haz señas!');
     } catch ( err ) {
         console.log( err );
+        alert('Ups intentalo de nuevo mas tarde');
     }
 })()
 

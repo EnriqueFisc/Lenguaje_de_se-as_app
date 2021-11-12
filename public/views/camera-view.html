@@ -10,10 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="../style/camera-view.css">
+    <link rel="stylesheet" href="../style/modal.css">
 
-    <title>Document</title>
+    <title>Aprendiendo lenguaje de señas</title>
 </head>
 
 <body>
@@ -21,12 +24,18 @@
     <div class="container__screen">
         <div class="camera-screen__container">
             <div class="camera-screen__video-container">
-                <video class="  " id="video" playsinline autoplay="true"></video>
+                <div id="cargando-camara" class="camera-screen__cargando-camara">
+                    <span>Cargando camara</span>
+                    <div class="spinner-border text-light" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+                <video class="no-desplegado animate__animated animate__zoomIn" id="video" playsinline autoplay="true"></video>
             </div>
             <div class="camera-screen__letter-card-container">
                 <button id="atras" class="camera-screen__fab-letter-card" disabled>
                     <!-- <i class="fas fa-arrow-left"></i> -->
-                    <p>Anterior</p>
+                    <span>Anterior</span>
                 </button>
                 <div id="card" class="camera-screen__letter-card animate__animated ">
                     <div class="camera-screen__card-head">
@@ -43,14 +52,66 @@
                 </div>
                 <button id="adelante" class="camera-screen__fab-letter-card">
                     <!-- <i class="fas fa-arrow-right"></i> -->
-                    <p>Siguiente</p>
+                    <span>Siguiente</span>
                 </button>
             </div>
         </div>
     </div>
     <canvas id="canvas1" class="canvas"></canvas>
 
+
+    <!-- Modal mostrado para cargar el modelo y mostrar instrucciones de uso de la aplicación -->
+
+    <div  id="modal-container" class="modal__main-container">
+        <div id="modal" class="modal__modal-container animate__animated animate__bounceIn">
+            <div class="modal__modal-header">
+                <h1>Cargando lo necesario para la aplicación</h1>
+            </div>
+            <!-- <hr> -->
+            <div class="modal__modal-body">
+                <div id="slider-container" class="modal__slider-container">
+                    <div class="modal__slide">
+                        <img src="../src/slider-ejemplo-1.png" alt="slider-ejemplo-1">
+                        <div class="modal__slide-text">
+                            <span>Intenta hacer la seña lo más cerca posible.</span>
+                        </div>
+                    </div>
+                    <div class="modal__slide">
+                        <img src="../src/slider-ejemplo-2.png" alt="slider-ejemplo-2">
+                        <div class="modal__slide-text">
+                            <span>¡Cuando la predicción sea exitosa se marcará en verde!</span>
+                        </div>
+                    </div>
+                    <div class="modal__slide">
+                        <img src="../src/slider-ejemplo-3.png" alt="slider-ejemplo-3">
+                        <div class="modal__slide-text">
+                            <span>Procura tener un lugar plano detrás de la mano y no estar en contra luz.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__slider-buttons">
+                    <div id="anterior" class="modal__slide-button LeftArrow">
+                        <img src="../src/LeftArrow.svg" alt="">
+                    </div>
+                    <div id="siguiente" class="modal__slide-button RightArrow">
+                        <img src="../src/RightArrow.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="modal__modal-footer">
+                <button id="boton-accion-modal" class="modal__btn-footer" disabled>
+                    <div id="spinner" class="spinner-border text-light" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
     <script type="module" src="../js/camera.js"></script>
+    <script src="../js/cargarModelo.js"></script>
+    <script src="../js/carrusel.js"></script>
 </body>
 
 </html>

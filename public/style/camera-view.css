@@ -15,17 +15,20 @@ body {
     height: 100vh;
     justify-content: center;
     overflow: hidden;
+
+    /* transition: all .3s ease; */
 }
 .canvas {
     width: 200px;
     height: 200px;
     display: none;
 }
-span {
+.camera-screen__card-body span {
     font-size: 90px;
 }
 video {
     border-radius: 20px;
+
 }
 .camera-screen__video-container {
     align-items: center;
@@ -35,6 +38,26 @@ video {
     overflow: hidden;
     max-height: 100%;
     max-width: 100%;
+    /* transition: all .3s ease-in; */
+}
+.camera-screen__cargando-camara {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    /* transition: all .3s ease; */
+}
+.camera-screen__cargando-camara .spinner-border {
+    border: 3px solid grey;
+    border-right-color: transparent;
+    height: 20px !important;
+    width: 20px !important;
+}
+.camera-screen__cargando-camara span {
+    color: grey;
+    font-size: 30px;
+    padding-right: 5px;
 }
 .camera-screen__letter-card-container {
     align-items: center;
@@ -125,6 +148,6 @@ video {
     width: 40px;
 }
 
-.hidden {
-    visibility: hidden;
+.no-desplegado {
+    display	: none;
 }
